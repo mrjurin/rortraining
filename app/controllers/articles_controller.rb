@@ -24,6 +24,8 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    #render plain:params[:article].inspect
+    #return
     @article = Article.new(article_params)
 
     respond_to do |format|
