@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div align='center'>
+    <%=will_paginate %>
+</div>
+
 <%=render 'article', obj:@articles%>
+
+<div align='center'>
+    <%=will_paginate %>
+</div>
+
 
 <%= link_to 'New Article', new_article_path %>
