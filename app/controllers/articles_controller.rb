@@ -28,7 +28,8 @@ class ArticlesController < ApplicationController
     #render plain:params[:article].inspect
     #return
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user =current_user
+    
 
     respond_to do |format|
       if @article.save
