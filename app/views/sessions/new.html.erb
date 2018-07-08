@@ -1,0 +1,15 @@
+<h1>Login</h1>
+<p id="notice"><%= notice %></p>
+<%= form_for(:session, :html=>{class:'form-horizontal',role:'form'},url:login_path) do |f| %>
+   <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class:'form-control', placeholder:'Please enter email' %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password , class:'form-control', autocomplete:'off'%>
+  </div>
+  <div class="actions">
+    <%= f.submit("Login", class: "btn btn-primary") %>
+  </div>
+<% end %>
