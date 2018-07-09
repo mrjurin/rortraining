@@ -1,5 +1,7 @@
 <h1>List Of Users</h1>
 
+<p id="notice"><%= notice %></p>
+
 <div align='center'>
     <%=will_paginate%>
     
@@ -12,6 +14,9 @@
                     <%=link_to user.username, user_path(user)%>
                 </li>
                 <li><small><%=pluralize(user.articles.count,"article") if user.articles %></small></li>
+                <% if logged_in? && current_user.admin? %>
+                     <%=link_to "Delete this user", user_path(user),method: :delete, data:{confirm:"Are you sure"} %>
+                <%end%>
             </div>
         </div>
     </div>

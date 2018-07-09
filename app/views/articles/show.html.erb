@@ -11,7 +11,7 @@
 </p>
 
 
-<%if logged_in? && current_user==@article.user%>
+<%if logged_in? && (current_user==@article.user || current_user.admin?)%>
 <%= link_to 'Edit', edit_article_path(@article) %>
 <%end%>|
 <%= link_to 'Back', articles_path %>
